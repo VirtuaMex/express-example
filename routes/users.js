@@ -6,7 +6,7 @@ router.post('/create', function(req, res) {
   models.User.create({
     username: req.body.username
   }).then(function() {
-    res.redirect('/');
+    res.json();
   });
 });
 
@@ -16,7 +16,7 @@ router.get('/:user_id/destroy', function(req, res) {
       id: req.params.user_id
     }
   }).then(function() {
-    res.redirect('/');
+    res.json();
   });
 });
 
@@ -25,7 +25,7 @@ router.post('/:user_id/tasks/create', function (req, res) {
     title: req.body.title,
     UserId: req.params.user_id
   }).then(function() {
-    res.redirect('/');
+    res.json();
   });
 });
 
@@ -35,7 +35,7 @@ router.get('/:user_id/tasks/:task_id/destroy', function (req, res) {
       id: req.params.task_id
     }
   }).then(function() {
-    res.redirect('/');
+    res.json();
   });
 });
 

@@ -6,7 +6,7 @@ router.get('/', function(req, res) {
   models.User.findAll({
     include: [ models.Task ]
   }).then(function(users) {
-    res.render('index', {
+    res.json({
       title: 'Sequelize: Express Example',
       users: users
     });
